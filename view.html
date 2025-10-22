@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Booking | Online Booking System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <h1>📋 Booking Details</h1>
+    <nav>
+      <a href="index.html">Book</a>
+    
+    </nav>
+  </header>
+
+  <main class="booking-list-container">
+    <div class="bookings-card" style="text-align:center;">
+      <h2>Booking Details</h2>
+      <div id="bookingDetails"></div>
+      <br>
+      <button class="primary-btn" onclick="window.location.href='bookings.html'">
+        ← Back to Bookings
+      </button>
+      <button class="primary-btn" onclick="window.location.href='index.html'">
+        ← Back to Booking Page
+      </button>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Online Booking System | Designed by <strong>Almas Banu</strong></p>
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const index = params.get('index');
+
+    const bookings = JSON.parse(localStorage.getItem('bookings')) || [];
+    let booking = null;
+
+    if (index !== null && bookings[index]) {
+      booking = bookings[index];
+    } else {
+      booking = JSON.parse(localStorage.getItem('latestBooking'));
+    }
+
+    const detailsDiv = document.getElementById('bookingDetails');
+
+    if (booking) {
+      detailsDiv.innerHTML = `
+        <p><strong>Name:</strong> ${booking.name}</p>
+        <p><strong>Email:</strong> ${booking.email}</p>
+        <p><strong>Type:</strong> ${booking.type}</p>
+        <p><strong>Date:</strong> ${booking.date}</p>
+        <p><strong>Time:</strong> ${booking.time}</p>
+      `;
+    } else {
+      detailsDiv.innerHTML = "<p>No booking found.</p>";
+    }
+  </script>
+</body>
+</html>

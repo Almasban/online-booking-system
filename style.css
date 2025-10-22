@@ -1,0 +1,339 @@
+/* ---------------------------
+   BOOKING PAGE ENHANCEMENT
+--------------------------- */
+body {
+  background: linear-gradient(135deg, rgba(0,123,255,0.2), rgba(0,255,200,0.15)),
+              url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+}
+
+/* Booking Container */
+.booking-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 85vh;
+  padding: 40px 15px;
+}
+
+/* Card Style */
+.booking-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: baseline(8px);
+  padding: 40px 35px;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  max-width: 420px;
+  width: 100%;
+  animation: fadeInUp 0.6s ease;
+}
+
+.booking-info h2 {
+  color: black;
+  margin-bottom: 90px;
+  text-align: center;
+  font-size:30;
+}
+
+.booking-info p {
+  color: black;
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 1.2rem;
+}
+
+/* Form */
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px 10px;
+  font-size: 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  background: transparent;
+  transition: 0.3s ease;
+}
+
+.form-group label {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  color: #888;
+  font-size: 0.95rem;
+  pointer-events: none;
+  transition: 0.3s ease;
+  background: #fff;
+  padding: 0 5px;
+}
+
+/* Floating Label Animation */
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group select:focus + label,
+.form-group select:valid + label {
+  top: -10px;
+  left: 10px;
+  font-size: 0.8rem;
+  color: #007bff;
+}
+
+/* Focus Effect */
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 6px rgba(0,123,255,0.2);
+}
+
+/* Submit Button */
+.primary-btn {
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.primary-btn:hover {
+  background: linear-gradient(135deg, #0056b3, #0080ff);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .booking-card {
+    padding: 30px 20px;
+  }
+  .primary-btn {
+    font-size: 1rem;
+  }
+}
+/* ---------------------------
+   BOOKINGS PAGE STYLES
+--------------------------- */
+.booking-list-container {
+  min-height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(0,123,255,0.15), rgba(0,255,200,0.15)),
+              url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+}
+
+.bookings-card {
+  background: rgba(255, 255, 255, 0.93);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  padding: 40px 35px;
+  max-width: 650px;
+  width: 100%;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  animation: fadeInUp 0.6s ease;
+}
+
+.bookings-card h2 {
+  text-align: center;
+  color: #007bff;
+}
+
+.bookings-card p {
+  text-align: center;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+/* Booking list */
+.booking-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.booking-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f7f9fc;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px 20px;
+  box-shadow: 0 3px 8px #ffffff(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+.booking-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px white(0,0,0,0.1);
+  color:white;
+}
+
+.booking-item h3 {
+  margin: 0;
+  color:#ffffff;
+}
+
+.booking-item p {
+  margin: 3px 0;
+  color: #ffffff;
+  font-size: 0.95rem;
+}
+
+.delete-btn {
+  background: #ff4d4d;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.delete-btn:hover {
+  background: #d93636;
+}
+
+.no-bookings {
+  text-align: center;
+  color: #555;
+  font-size: 6rem;
+}
+
+.buttons {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.danger-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.danger-btn:hover {
+  background: #b02a37;
+}
+
+@media (max-width: 600px) {
+  .booking-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 100px;
+  }
+
+  .delete-btn {
+    align-self: flex-end;
+  }
+}
+/* ---------------------------
+   MODAL & VIEW BUTTON STYLES
+--------------------------- */
+.view-btn {
+  background:white#007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: 0.3s ease;
+}
+.view-btn:hover {
+  background: #0056b3;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-box {
+  background: white;
+  padding: 25px 30px;
+  border-radius: 12px;
+  max-width: 350px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.secondary-btn {
+  background: #ccc;
+  color: #222;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.secondary-btn:hover {
+  background: #aaa;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
